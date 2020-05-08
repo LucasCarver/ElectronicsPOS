@@ -7,8 +7,8 @@ namespace ElectronicsPOS
 {
     class ProductList
     {
-        public List<Product> Products { get; set; }
-        public static void ProductFileToList(List<Product> products)
+        public static List<Product> Products { get; set; }
+        public static void ProductFileToList()
         {
             string[] productsArray;
             StreamReader reader = new StreamReader("../../Product_List.txt");
@@ -16,7 +16,7 @@ namespace ElectronicsPOS
             while (line != null)
             {
                 productsArray = line.Split('|');
-                products.Add(new Product(productsArray[0], productsArray[1], productsArray[2], double.Parse(productsArray[3])));
+                Products.Add(new Product(productsArray[0], productsArray[1], productsArray[2], double.Parse(productsArray[3])));
                 line = reader.ReadLine();
             }
             reader.Close();
