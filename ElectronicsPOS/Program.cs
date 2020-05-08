@@ -6,6 +6,8 @@ namespace ElectronicsPOS
     {
         static void Main(string[] args)
         {
+            
+
         }
     }
 }
