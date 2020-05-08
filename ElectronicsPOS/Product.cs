@@ -16,6 +16,7 @@ namespace ElectronicsPOS
             Category = category;
             Description = description;
             Price = price;
+            Console.WriteLine();
         }
         public Product() { }
     }
