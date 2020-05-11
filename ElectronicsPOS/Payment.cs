@@ -8,9 +8,8 @@ namespace ElectronicsPOS
     {
         public double Total { get; set; }
 
-
         public abstract void MakePayment();
-        
+
     }
 
 }

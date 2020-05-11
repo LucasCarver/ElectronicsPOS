@@ -25,12 +25,7 @@ namespace ElectronicsPOS
                     Console.WriteLine("This is not a number.  Try again.");
                     continue;
                 }
-                
             }
-
-
         }
-
-       
     }
 }
