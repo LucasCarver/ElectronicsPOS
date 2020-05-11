@@ -15,6 +15,7 @@ namespace ElectronicsPOS
             // Menu.DrawMenu(ProductList.Products); 
             Console.WriteLine("Please choose a product by number or type checkout");
             string input = Console.ReadLine().ToLower().Trim();
+            int userQuantity = 0;
             if (input == "checkout")
             {
                 //call checkout method
@@ -23,10 +24,18 @@ namespace ElectronicsPOS
             {
 
                 int userChoice = int.Parse(input);
-                //DisplayProduct.DrawProduct(ProductList.Products[userChoice - 1]);
+
+                DisplayProduct.DrawProduct(ProductList.Products[userChoice - 1]);
+
                 Console.WriteLine("How many would you like?");
-                int userQuantity = int.Parse(Console.ReadLine());
-                //Cart.CartList.Add(new CartObject(ProductList.Products[userChoice - 1]), userQuantity);
+
+                userQuantity = int.Parse(Console.ReadLine());
+
+                Cart.CartList.Add(new CartObject(ProductList.Products[userChoice - 1], userQuantity));
+
+                Welcome();
+
+
             }
 
 
