@@ -9,35 +9,81 @@ namespace ElectronicsPOS
     {
         //create a list of cart objects
 
-        public void Welcome()
+        public static void Welcome()
         {
-            ProductList.ProductFileToList();
-            // Menu.DrawMenu(ProductList.Products); 
-            Console.WriteLine("Please choose a product by number or type checkout");
-            string input = Console.ReadLine().ToLower().Trim();
-            int userQuantity = 0;
-            if (input == "checkout")
-            {
-                //call checkout method
-            }
-            else
+            while (true)
             {
 
-                int userChoice = int.Parse(input);
 
-                DisplayProduct.DrawProduct(ProductList.Products[userChoice - 1]);
+                ProductList.ProductFileToList();
 
-                Console.WriteLine("How many would you like?");
+                Menu.PrintMenu(ProductList.Products); 
 
-                userQuantity = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please choose a product by number or type checkout");
 
-                Cart.CartList.Add(new CartObject(ProductList.Products[userChoice - 1], userQuantity));
+                string input = Console.ReadLine().ToLower().Trim();
 
-                Welcome();
+                int userQuantity = 0;
 
+                int userChoice = 0;
 
+                if (input == "checkout")
+                {
+                    //Checkout.CheckOut();
+                    
+
+                    break;
+                }
+                else
+                {
+
+                    bool isNum = int.TryParse(input, out userChoice);
+
+                    if (isNum)
+                    {
+                        try
+                        {
+
+                            DisplayProduct.DrawProduct(ProductList.Products[userChoice - 1]);
+
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Please enter a valid item number:");
+                            continue;
+
+                        }
+
+                        Console.WriteLine("How many would you like?");
+
+                        while (true)
+                        {
+
+                            bool isQuant = int.TryParse(Console.ReadLine(), out userQuantity);
+
+                            if (isQuant)
+                            {
+                                Cart.CartList.Add(new CartObject(ProductList.Products[userChoice - 1], userQuantity));
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter a valid amount:");
+                                continue;
+                            }
+
+                            
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter a valid item number:");
+                        Console.WriteLine();
+                        continue;
+                    }
+
+                }
             }
-
 
 
         }
