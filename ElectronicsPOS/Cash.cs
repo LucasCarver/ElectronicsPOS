@@ -23,10 +23,11 @@ namespace ElectronicsPOS
                     Console.WriteLine("Invalid input. Please try again.");
                     continue;
                 }
-                Change = Total - LegalTender;
+                Change = LegalTender - Cart.GetGrandTotal();
                 if (Change >= 0)
                 {
-                    Console.WriteLine($"Your change is {Change}");
+                    Console.WriteLine($"Your change is {Change:C2}");
+                    break;
                 }
                 else
                 {

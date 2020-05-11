@@ -6,11 +6,13 @@ namespace ElectronicsPOS
 {
     class DisplayProduct
     {
-
-
         public static void DrawProduct(Product product)
         {
-            Console.WriteLine($"Product: {product.Name} \nCategory: {product.Category} \nDescription: {product.Description} \nPrice{product.Price}");
+            string format = "{0,-16}{1,1}";
+            Console.WriteLine(format, $"Product: ", $"{product.Name}");
+            Console.WriteLine(format, $"Category: ", $"{product.Category}".Trim());
+            Console.WriteLine(format, $"Description: ", $"{product.Description}".Trim());
+            Console.WriteLine(format, $"Price: ", $"{product.Price:C2}");
         }
     }
 }

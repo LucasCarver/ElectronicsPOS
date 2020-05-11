@@ -9,14 +9,12 @@ namespace ElectronicsPOS
         public static void PrintMenu(List<Product> productList)
         {
             int index = 1;
-
             foreach(Product p in productList)
             {
-                Console.Write($"{index}. ");
+                Console.Write($"{index}. \n");
                 DisplayProduct.DrawProduct(p);
                 Console.WriteLine("=============================");
                 index++;
-
             }
         }
     }

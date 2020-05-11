@@ -10,12 +10,13 @@ namespace ElectronicsPOS
 
         public static void DrawReceipt()
         {
+            string format = "{0,15}{1,15}";
             Console.WriteLine("Thank you for shopping with us");
             CartView.DrawCart();
             Console.WriteLine();
-            Console.WriteLine($"Subtotal: {Cart.GetSubTotal()}");
-            Console.WriteLine($"Sales Tax: {Cart.GetSalesTax()}");
-            Console.WriteLine($"Total: {Cart.GetGrandTotal()}");
+            Console.WriteLine(format, $"Subtotal: ", $"{Cart.GetSubTotal():C2}");
+            Console.WriteLine(format, $"Sales Tax: ", $"{Cart.GetSalesTax():C2}");
+            Console.WriteLine(format, $"Total: ", $"{Cart.GetGrandTotal():C2}");
 
             GetPaymentReceipt(Checkout.PaymentType);
             Console.WriteLine();
@@ -27,17 +28,17 @@ namespace ElectronicsPOS
         {
             if(userPaymentNumber == 1)
             {
-                
-                Console.WriteLine($"(Cash tendered: {Checkout.CashMoney.LegalTender}");
-                Console.WriteLine($"(Change: {Checkout.CashMoney.Change}");
+                string format = "{0,15}{1,15}";
+                Console.WriteLine(format, $"Cash tendered: ", $"{Checkout.CashMoney.LegalTender:C2}");
+                Console.WriteLine(format, $"Change: ", $"{Checkout.CashMoney.Change:C2}");
             }
             else if(userPaymentNumber == 2)
             {
-                Console.WriteLine("Thank you for your check payment. Your balance is $0.");
+                Console.WriteLine($"Thank you for your check payment of {Cart.GetGrandTotal():C2}.");
             }
             else if (userPaymentNumber == 3)
             {
-                Console.WriteLine($"Your credit card has been charged and you balance is $0");
+                Console.WriteLine($"Your credit card has been charged {Cart.GetGrandTotal():C2}.");
             }
         }
             

@@ -13,16 +13,21 @@ namespace ElectronicsPOS
         {
             while (true)
             {
+                Console.WriteLine("What check number are you paying with?");
                 try
                 {
-                    Console.WriteLine("What check number are you paying with?");
                     CheckNumber = int.Parse(Console.ReadLine());
+                    if(!(CheckNumber > 0))
+                    {
+                        Console.WriteLine("Invalid check number.");
+                        continue;
+                    }
                     Console.WriteLine("Thank you for your payment!");
                     break;
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("This is not a number.  Try again.");
+                    Console.WriteLine("This is not a number. Try again.");
                     continue;
                 }
             }

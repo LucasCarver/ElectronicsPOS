@@ -10,9 +10,16 @@ namespace ElectronicsPOS
         public static Cash CashMoney { get; set; } = new Cash();
         public static Check CheckMoney { get; set; } = new Check();
         public static CreditCard CreditMoney { get; set; } = new CreditCard();
+
         public static void CheckOut()
         {
+            string format = "{0, 59}{1, 12}";
             CartView.DrawCart();
+
+            Console.WriteLine(format, "Sub Total: ", $"{Cart.GetSubTotal():C2}");
+            Console.WriteLine(format, "Sales Tax: ", $"{Cart.GetSalesTax():C2}");
+            Console.WriteLine(format, "Grand Total: ", $"{Cart.GetGrandTotal():C2}");
+
             PaymentType = GetPaymentType();
             if (PaymentType == 1)
             {

@@ -16,14 +16,14 @@ namespace ElectronicsPOS
             GetExpirationDate();
             GetCVVNumber();
 
-            Console.WriteLine($"Success, your credit card has been charged {Total}");
+            //Console.WriteLine($"Success, your credit card has been charged {Cart.GetGrandTotal():C2}.");
         }
 
         public void GetCreditCardNumber()
         {
             while (true)
             {
-                Console.WriteLine("What is your credti card number?");
+                Console.WriteLine("What is your credit card number?");
                 CreditCardNumber = Console.ReadLine();
                 bool isValid = IsValidNumber(CreditCardNumber);
                 if (isValid == false)
@@ -39,7 +39,6 @@ namespace ElectronicsPOS
         {
             while (true)
             {
-                               
                 Console.WriteLine("What is the two digit expiration month?");
                 Month = Console.ReadLine();
                 bool isValidMonth = IsValidMonth(Month);
