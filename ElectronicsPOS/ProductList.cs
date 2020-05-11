@@ -21,5 +21,16 @@ namespace ElectronicsPOS
             }
             reader.Close();
         }
+
+        public static void AddProductToFile()
+        {
+            StreamWriter writer = new StreamWriter("../../../Product_List.txt");
+            foreach(Product product in Products)
+            {
+                writer.WriteLine($"{product.Name} | {product.Category} | {product.Description} | {product.Price}");
+            }
+            writer.Close();
+        }
     }
+
 }

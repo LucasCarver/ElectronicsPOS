@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Text;
 
 namespace ElectronicsPOS
@@ -11,9 +12,14 @@ namespace ElectronicsPOS
         {
             Console.WriteLine("Thank you for shopping with us");
             CartView.DrawCart();
+            Console.WriteLine();
+            Console.WriteLine($"Subtotal: {Cart.GetSubTotal()}");
+            Console.WriteLine($"Sales Tax: {Cart.GetSalesTax()}");
+            Console.WriteLine($"Total: {Cart.GetGrandTotal()}");
 
-
-            GetPaymentReceipt(userPaymentNumber);
+            GetPaymentReceipt(Checkout.PaymentType);
+            Console.WriteLine();
+            Console.WriteLine("Pleae visit us again soon!");
 
         }
 
@@ -21,9 +27,9 @@ namespace ElectronicsPOS
         {
             if(userPaymentNumber == 1)
             {
-                Cash c = new Cash();
-                Console.WriteLine($"(Cash tendered: {c.LegalTender}");
-                Console.WriteLine($"(Change: {c.Change}");
+                
+                Console.WriteLine($"(Cash tendered: {Checkout.CashMoney.LegalTender}");
+                Console.WriteLine($"(Change: {Checkout.CashMoney.Change}");
             }
             else if(userPaymentNumber == 2)
             {
