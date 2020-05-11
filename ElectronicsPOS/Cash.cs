@@ -14,7 +14,15 @@ namespace ElectronicsPOS
             while (true)
             {
                 Console.WriteLine("How much money are you paying with?");
-                LegalTender = double.Parse(Console.ReadLine());
+                try
+                {
+                    LegalTender = double.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid input. Please try again.");
+                    continue;
+                }
                 Change = Total - LegalTender;
                 if (Change >= 0)
                 {
