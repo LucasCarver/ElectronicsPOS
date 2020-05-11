@@ -16,7 +16,7 @@ namespace ElectronicsPOS
                 Console.WriteLine("How much money are you paying with?");
                 LegalTender = double.Parse(Console.ReadLine());
                 Change = Total - LegalTender;
-                if (Change > 0)
+                if (Change >= 0)
                 {
                     Console.WriteLine($"Your change is {Change}");
                 }
