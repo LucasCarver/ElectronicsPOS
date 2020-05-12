@@ -7,7 +7,6 @@ namespace ElectronicsPOS
 {
     class Receipt
     {
-
         public static void DrawReceipt()
         {
             string format = "{0,15}{1,15}";
@@ -21,9 +20,7 @@ namespace ElectronicsPOS
             GetPaymentReceipt(Checkout.PaymentType);
             Console.WriteLine();
             Console.WriteLine("Pleae visit us again soon!");
-
         }
-
         public static void GetPaymentReceipt(int userPaymentNumber)
         {
             if(userPaymentNumber == 1)
@@ -41,9 +38,5 @@ namespace ElectronicsPOS
                 Console.WriteLine($"Your credit card has been charged {Cart.GetGrandTotal():C2}.");
             }
         }
-            
-
-        
-
     }
 }

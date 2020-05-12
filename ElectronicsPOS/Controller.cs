@@ -67,8 +67,6 @@ namespace ElectronicsPOS
                         catch
                         {
                             Console.WriteLine("Please enter a valid item number:");
-                            Console.WriteLine("Press any key to try again.");
-                            Console.ReadKey();
                             continue;
                         }
 
@@ -87,8 +85,6 @@ namespace ElectronicsPOS
                             else
                             {
                                 Console.WriteLine("Please enter a valid amount:");
-                                Console.WriteLine("Press any key to try again.");
-                                Console.ReadKey();
                                 continue;
                             }
                         }
@@ -96,8 +92,6 @@ namespace ElectronicsPOS
                     else
                     {
                         Console.WriteLine("Please enter a valid item number:");
-                        Console.WriteLine("Press any key to try again.");
-                        Console.ReadKey();
                         Console.WriteLine();
                         continue;
                     }

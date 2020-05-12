@@ -24,7 +24,6 @@ namespace ElectronicsPOS
             }
             reader.Close();
         }
-
         public static void AddProductToFile()
         {
             double temp;
@@ -66,7 +65,6 @@ namespace ElectronicsPOS
             }
             writer.Close();
         }
-
         public static void RemoveProductFromFile()
         {
             Console.WriteLine("Enter menu item number: ");
@@ -80,7 +78,5 @@ namespace ElectronicsPOS
             }
             writer.Close();
         }
-
     }
-
 }

@@ -9,16 +9,12 @@ namespace ElectronicsPOS
         public string CVVNumber { get; set; }
         public string Year { get; set; }
         public string Month { get; set; }
-
         public override void MakePayment()
         {
             GetCreditCardNumber();
             GetExpirationDate();
             GetCVVNumber();
-
-            //Console.WriteLine($"Success, your credit card has been charged {Cart.GetGrandTotal():C2}.");
         }
-
         public void GetCreditCardNumber()
         {
             while (true)
@@ -34,7 +30,6 @@ namespace ElectronicsPOS
                 break;
             }
         }
-
         public void GetExpirationDate()
         {
             while (true)
@@ -64,13 +59,10 @@ namespace ElectronicsPOS
                             break;
                         }
                     }
-                   
                 }
                 break;
-                
             }
         }
-
         public void GetCVVNumber()
         {
             while (true)
@@ -95,20 +87,17 @@ namespace ElectronicsPOS
             Match match = Regex.Match(creditCardNumber, pattern);
             return match.Success;
         }
-
         public static bool IsValidCVV(string cvvNumber)
         {
             string pattern2 = @"^([0-9]{3,4})$";
             Match match2 = Regex.Match(cvvNumber, pattern2);
             return match2.Success;
-
         }
         public static bool IsValidMonth(string month)
         {
             string pattern3 = "^0[1-9]|1[012]$";
             Match match3 = Regex.Match(month, pattern3);
             return match3.Success;
-
         }
         public static bool IsValidYear(string year)
         {
@@ -116,6 +105,5 @@ namespace ElectronicsPOS
             Match match4 = Regex.Match(year, pattern4);
             return match4.Success;
         }
-
     }
 }

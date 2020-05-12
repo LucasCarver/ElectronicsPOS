@@ -9,10 +9,10 @@ namespace ElectronicsPOS
         public static void DrawProduct(Product product)
         {
             string format = "{0,-16}{1,1}";
-            Console.WriteLine(format, $"Product: ", $"{product.Name}");
+            Console.WriteLine(format, $"Product: ", $"{product.Name}".Trim());
             Console.WriteLine(format, $"Category: ", $"{product.Category}".Trim());
             Console.WriteLine(format, $"Description: ", $"{product.Description}".Trim());
-            Console.WriteLine(format, $"Price: ", $"{product.Price:C2}");
+            Console.WriteLine(format, $"Price: ", $"{product.Price:C2}".Trim());
         }
     }
 }

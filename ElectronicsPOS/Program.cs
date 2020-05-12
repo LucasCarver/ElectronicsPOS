@@ -11,7 +11,7 @@ namespace ElectronicsPOS
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("BEST \nBUY");
-            Console.WriteLine("===");
+            Console.WriteLine("====");
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -23,7 +23,6 @@ namespace ElectronicsPOS
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Thanks for shopping at Best Buy!");
-          
         }
     }
 }

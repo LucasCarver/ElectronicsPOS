@@ -27,7 +27,6 @@ namespace ElectronicsPOS
         {
             return GetSubTotal() + GetSalesTax();
         }
-
         public static void Clear()
         {
             List<CartObject> deleteList = new List<CartObject>();
